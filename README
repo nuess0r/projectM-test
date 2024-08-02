@@ -3,6 +3,8 @@ projectM test programs
 
 Small boilerplate code to try things out and notes on building them.
 
+
+
 Build and install the projectM library:
 ---------------------------------------
 
@@ -24,6 +26,11 @@ gcc -g -o shader-example shader-example.c -lGL -lGLU -lglut -lGLEW
 
 gcc -g -o projectM-jack-client projectM-jack-client.c `pkg-config --cflags --libs jack` -lprojectM -lGL -lGLU -lGLEW -lglut
 
+
+Building the pdprojectm Pure Data external:
+-------------------------------------------
+
+Follow the instructions in the pdprojectm/README.md
 
 Building the jni bindings and jar file:
 ---------------------------------------
@@ -52,3 +59,32 @@ jar cfe jprojectm.jar org.brain4free.jprojectm.ProjectM org/brain4free/jprojectm
 install:
 sudo cp libprojectmjni.so /usr/lib/x86_64-linux-gnu/jni/
 sudo cp libprojectmjni.so /usr/lib/
+
+Building dependencies
+----------------------
+
+Installation of the dependencies if you use Debian:
+
+full openGL:
+projectM library:
+apt install build-essential gcc cmake libsndfile1-dev libjack-jackd2-dev libglut-dev libglew-dev libglm-dev libgles2-mesa-dev
+
+openGL ES (GLES):
+apt install libglm-dev libgles2-mesa-dev gcc qtbase5-gles-dev qt5-default libqt5opengl5-dev libpulse-dev
+
+
+jack test:
+apt install libsndfile1-dev libjack-jackd2-dev
+
+
+projectM jack client:
+apt install libsndfile1-dev libjack-jackd2-dev libglut-dev libglew-dev
+
+
+projectM java wrapper:
+apt install build-essential gcc cmake default-jdk
+
+
+pdprojectm Pure Data external:
+apt install build-essential gcc cmake pd Gem Gem-dev
+
